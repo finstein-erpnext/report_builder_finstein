@@ -14,7 +14,7 @@ app_license = "mit"
 add_to_apps_screen = [
 	{
 		"name": "report_builder",
-		"logo": "/assets/report_builder/images/report-studio.svg",
+		"logo": "/assets/report_builder/images/report-studio.png",
 		"title": "Report Studio",
 		"route": "/app/report-studio",
 		"has_permission": "report_builder.api.permission.has_app_permission",
