@@ -1,4 +1,4 @@
-### Report Builder
+### Report Creator
 
 A Frappe app that lets users design, run, and share reports **entirely through a UI** — selecting
 columns, applying filters, grouping, sorting, joining related/child-table sources, and adding

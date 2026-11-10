@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: MIT
 app_name = "report_builder"
-app_title = "Report Builder"
+app_title = "Report Creator"
 app_publisher = "Pravin"
 app_description = "Build the Report using UI"
 app_email = "pravinr2631@gmail.com"
@@ -15,7 +15,7 @@ add_to_apps_screen = [
 	{
 		"name": "report_builder",
 		"logo": "/assets/report_builder/images/report-studio.png",
-		"title": "Report Studio",
+		"title": "Report Creator",
 		"route": "/app/report-studio",
 		"has_permission": "report_builder.api.permission.has_app_permission",
 	}
