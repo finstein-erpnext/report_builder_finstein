@@ -1,9 +1,9 @@
 # SPDX-License-Identifier: MIT
 app_name = "report_builder"
 app_title = "Report Creator"
-app_publisher = "Pravin"
+app_publisher = "Finstein"
 app_description = "Build the Report using UI"
-app_email = "pravinr2631@gmail.com"
+app_email = "erpnext@finstein.ai"
 app_license = "mit"
 
 # Apps

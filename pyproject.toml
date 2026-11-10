@@ -1,7 +1,7 @@
 [project]
 name = "report_builder"
 authors = [
-    { name = "Pravin", email = "pravinr2631@gmail.com"}
+    { name = "Finstein", email = "erpnext@finstein.ai"}
 ]
 description = "Build the Report using UI"
 requires-python = ">=3.10"
