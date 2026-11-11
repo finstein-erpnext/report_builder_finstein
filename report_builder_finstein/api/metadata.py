@@ -3,13 +3,13 @@ import json
 
 import frappe
 
-from report_builder.engine.meta_validator import (
+from report_builder_finstein.engine.meta_validator import (
 	LAYOUT_FIELDTYPES,
 	assert_doctype_readable,
 	resolve_join_match_path,
 	resolve_path,
 )
-from report_builder.engine.schema import MAX_JOIN_DEPTH
+from report_builder_finstein.engine.schema import MAX_JOIN_DEPTH
 
 EXCLUDED_DOCTYPES = {"DocType", "DocField", "DocPerm"}
 

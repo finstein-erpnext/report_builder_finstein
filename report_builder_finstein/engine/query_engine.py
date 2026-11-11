@@ -8,7 +8,7 @@ from frappe.utils import cint, flt
 from pypika import Order
 from pypika.terms import LiteralValue
 
-from report_builder.engine import (
+from report_builder_finstein.engine import (
 	aggregations,
 	filter_ops,
 	join_resolver,

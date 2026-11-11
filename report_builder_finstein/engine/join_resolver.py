@@ -4,7 +4,7 @@ from typing import Optional
 
 import frappe
 from frappe.query_builder.terms import SubQuery
-from report_builder.engine.meta_validator import resolve_join_match_path
+from report_builder_finstein.engine.meta_validator import resolve_join_match_path
 
 
 @dataclass
@@ -181,7 +181,7 @@ def resolve(cfg, base_table, base_doctype: str, source_tables: dict[str, object]
 def build_related_joins(cfg, source_tables: dict[str, object], col_refs):
 	"""Return RelatedJoinSpec entries, including child-table helper joins when a
 	match condition uses a one-hop child-table path."""
-	from report_builder.engine.schema import VALID_JOIN_OPS
+	from report_builder_finstein.engine.schema import VALID_JOIN_OPS
 
 	specs: list[RelatedJoinSpec] = []
 	source_doctypes = {"": cfg.base_doctype}

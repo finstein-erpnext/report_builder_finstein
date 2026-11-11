@@ -5,9 +5,9 @@ from typing import Optional
 import frappe
 from frappe.utils.csvutils import to_csv
 
-from report_builder.api.builder import doc_to_config
-from report_builder.engine import query_engine
-from report_builder.engine.schema import MAX_EXPORT_ROWS
+from report_builder_finstein.api.builder import doc_to_config
+from report_builder_finstein.engine import query_engine
+from report_builder_finstein.engine.schema import MAX_EXPORT_ROWS
 
 REPORT_DOCTYPE = "Report Studio Report"
 ALLOWED_FORMATS = {"xlsx", "csv", "pdf"}
@@ -87,7 +87,7 @@ def _respond_pdf(filename_base: str, title: str, headers: list, rows: list) -> N
 	# Template path is a hardcoded literal (not user input) and the template
 	# uses Jinja auto-escaping for all context values — no SSTI surface.
 	html = frappe.render_template(  # nosemgrep: frappe-ssti
-		"report_builder/templates/includes/export_table.html",
+		"report_builder_finstein/templates/includes/export_table.html",
 		{
 			"title": title,
 			"headers": headers,

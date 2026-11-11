@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: MIT
 from frappe.utils import cint
 
-from report_builder.engine.schema import MAX_PAGE_SIZE
+from report_builder_finstein.engine.schema import MAX_PAGE_SIZE
 
 
 def clamp_page_size(value, default=20):

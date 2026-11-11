@@ -11,7 +11,7 @@ import frappe
 
 
 def execute():
-	from report_builder.api.builder import publish_to_standard_report
+	from report_builder_finstein.api.builder import publish_to_standard_report
 
 	if not frappe.db.has_table("Report Studio Report"):
 		return

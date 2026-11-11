@@ -4,7 +4,7 @@ from typing import Callable
 import frappe
 from frappe.utils import cint, cstr, flt, get_datetime, getdate
 
-from report_builder.engine.schema import MAX_IN_VALUES
+from report_builder_finstein.engine.schema import MAX_IN_VALUES
 
 NUMERIC_FIELDTYPES = {"Int", "Float", "Currency", "Percent"}
 INT_FIELDTYPES = {"Int", "Check"}
@@ -192,7 +192,7 @@ def to_predicate(filter_cfg, col_refs, key=None):
 		# fall through with the unwrapped field and let the user choose
 		# Equals/Between for date bucketing.
 		if filter_cfg.operator not in ("Contains", "Does Not Contain"):
-			from report_builder.engine.aggregations import date_bucket
+			from report_builder_finstein.engine.aggregations import date_bucket
 
 			field = date_bucket(field, gran)
 

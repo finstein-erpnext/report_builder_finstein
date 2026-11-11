@@ -4,7 +4,7 @@
 
 Why: published Studio reports are `is_standard=Yes`, so Frappe writes a
 Python module on disk at
-`report_builder/report_builder/report/<scrub(name)>/`. Python identifiers
+`report_builder_finstein/report_builder/report/<scrub(name)>/`. Python identifiers
 cannot contain parentheses, so the old folder names (e.g.
 `pr_demo_2_(rpt_00065)`) are unimportable — every run crashes with
 ModuleNotFoundError. The new format scrubs to `pr_demo_2_rpt_00065`,
@@ -29,13 +29,13 @@ import frappe
 def execute():
 	from frappe.model.rename_doc import rename_doc
 
-	from report_builder.api.builder import (
+	from report_builder_finstein.api.builder import (
 		REPORT_DOCTYPE,
 		publish_to_standard_report,
 	)
 
 	report_dir = os.path.join(
-		frappe.get_app_path("report_builder"),
+		frappe.get_app_path("report_builder_finstein"),
 		"report_builder",
 		"report",
 	)

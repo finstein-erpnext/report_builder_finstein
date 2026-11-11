@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: MIT
-app_name = "report_builder"
-app_title = "Report Creator"
+app_name = "report_builder_finstein"
+app_title = "Report Builder Finstein"
 app_publisher = "Finstein"
 app_description = "Build the Report using UI"
 app_email = "erpnext@finstein.ai"
@@ -13,11 +13,11 @@ app_license = "mit"
 
 add_to_apps_screen = [
 	{
-		"name": "report_builder",
-		"logo": "/assets/report_builder/images/report-studio.png",
-		"title": "Report Creator",
+		"name": "report_builder_finstein",
+		"logo": "/assets/report_builder_finstein/images/report-studio.png",
+		"title": "Report Builder Finstein",
 		"route": "/app/report-studio",
-		"has_permission": "report_builder.api.permission.has_app_permission",
+		"has_permission": "report_builder_finstein.api.permission.has_app_permission",
 	}
 ]
 
@@ -30,15 +30,15 @@ fixtures = [
 # ------------------
 
 # include js, css files in header of desk.html
-# app_include_css = "/assets/report_builder/css/report_builder.css"
-# app_include_js = "/assets/report_builder/js/report_builder.js"
+# app_include_css = "/assets/report_builder_finstein/css/report_builder.css"
+# app_include_js = "/assets/report_builder_finstein/js/report_builder.js"
 
 # include js, css files in header of web template
-# web_include_css = "/assets/report_builder/css/report_builder.css"
-# web_include_js = "/assets/report_builder/js/report_builder.js"
+# web_include_css = "/assets/report_builder_finstein/css/report_builder.css"
+# web_include_js = "/assets/report_builder_finstein/js/report_builder.js"
 
 # include custom scss in every website theme (without file extension ".scss")
-# website_theme_scss = "report_builder/public/scss/website"
+# website_theme_scss = "report_builder_finstein/public/scss/website"
 
 # include js, css files in header of web form
 # webform_include_js = {"doctype": "public/js/doctype.js"}
@@ -56,7 +56,7 @@ fixtures = [
 # Svg Icons
 # ------------------
 # include app icons in desk
-# app_include_icons = "report_builder/public/icons.svg"
+# app_include_icons = "report_builder_finstein/public/icons.svg"
 
 # Home Pages
 # ----------
@@ -80,54 +80,54 @@ fixtures = [
 
 # add methods and filters to jinja environment
 # jinja = {
-# 	"methods": "report_builder.utils.jinja_methods",
-# 	"filters": "report_builder.utils.jinja_filters"
+# 	"methods": "report_builder_finstein.utils.jinja_methods",
+# 	"filters": "report_builder_finstein.utils.jinja_filters"
 # }
 
 # Installation
 # ------------
 
-# before_install = "report_builder.install.before_install"
-# after_install = "report_builder.install.after_install"
+# before_install = "report_builder_finstein.install.before_install"
+# after_install = "report_builder_finstein.install.after_install"
 
 # Uninstallation
 # ------------
 
-# before_uninstall = "report_builder.uninstall.before_uninstall"
-# after_uninstall = "report_builder.uninstall.after_uninstall"
+# before_uninstall = "report_builder_finstein.uninstall.before_uninstall"
+# after_uninstall = "report_builder_finstein.uninstall.after_uninstall"
 
 # Integration Setup
 # ------------------
 # To set up dependencies/integrations with other apps
 # Name of the app being installed is passed as an argument
 
-# before_app_install = "report_builder.utils.before_app_install"
-# after_app_install = "report_builder.utils.after_app_install"
+# before_app_install = "report_builder_finstein.utils.before_app_install"
+# after_app_install = "report_builder_finstein.utils.after_app_install"
 
 # Integration Cleanup
 # -------------------
 # To clean up dependencies/integrations with other apps
 # Name of the app being uninstalled is passed as an argument
 
-# before_app_uninstall = "report_builder.utils.before_app_uninstall"
-# after_app_uninstall = "report_builder.utils.after_app_uninstall"
+# before_app_uninstall = "report_builder_finstein.utils.before_app_uninstall"
+# after_app_uninstall = "report_builder_finstein.utils.after_app_uninstall"
 
 # Desk Notifications
 # ------------------
 # See frappe.core.notifications.get_notification_config
 
-# notification_config = "report_builder.notifications.get_notification_config"
+# notification_config = "report_builder_finstein.notifications.get_notification_config"
 
 # Permissions
 # -----------
 # Permissions evaluated in scripted ways
 
 permission_query_conditions = {
-	"Report Studio Report": "report_builder.api.permission.report_query_conditions",
+	"Report Studio Report": "report_builder_finstein.api.permission.report_query_conditions",
 }
 
 has_permission = {
-	"Report Studio Report": "report_builder.api.permission.has_report_permission",
+	"Report Studio Report": "report_builder_finstein.api.permission.has_report_permission",
 }
 
 # DocType Class
@@ -155,39 +155,39 @@ has_permission = {
 
 # scheduler_events = {
 # 	"all": [
-# 		"report_builder.tasks.all"
+# 		"report_builder_finstein.tasks.all"
 # 	],
 # 	"daily": [
-# 		"report_builder.tasks.daily"
+# 		"report_builder_finstein.tasks.daily"
 # 	],
 # 	"hourly": [
-# 		"report_builder.tasks.hourly"
+# 		"report_builder_finstein.tasks.hourly"
 # 	],
 # 	"weekly": [
-# 		"report_builder.tasks.weekly"
+# 		"report_builder_finstein.tasks.weekly"
 # 	],
 # 	"monthly": [
-# 		"report_builder.tasks.monthly"
+# 		"report_builder_finstein.tasks.monthly"
 # 	],
 # }
 
 # Testing
 # -------
 
-# before_tests = "report_builder.install.before_tests"
+# before_tests = "report_builder_finstein.install.before_tests"
 
 # Overriding Methods
 # ------------------------------
 #
 # override_whitelisted_methods = {
-# 	"frappe.desk.doctype.event.event.get_events": "report_builder.event.get_events"
+# 	"frappe.desk.doctype.event.event.get_events": "report_builder_finstein.event.get_events"
 # }
 #
 # each overriding function accepts a `data` argument;
 # generated from the base implementation of the doctype dashboard,
 # along with any modifications made in other Frappe apps
 # override_doctype_dashboards = {
-# 	"Task": "report_builder.task.get_dashboard_data"
+# 	"Task": "report_builder_finstein.task.get_dashboard_data"
 # }
 
 # exempt linked doctypes from being automatically cancelled
@@ -201,13 +201,13 @@ has_permission = {
 
 # Request Events
 # ----------------
-# before_request = ["report_builder.utils.before_request"]
-# after_request = ["report_builder.utils.after_request"]
+# before_request = ["report_builder_finstein.utils.before_request"]
+# after_request = ["report_builder_finstein.utils.after_request"]
 
 # Job Events
 # ----------
-# before_job = ["report_builder.utils.before_job"]
-# after_job = ["report_builder.utils.after_job"]
+# before_job = ["report_builder_finstein.utils.before_job"]
+# after_job = ["report_builder_finstein.utils.after_job"]
 
 # User Data Protection
 # --------------------
@@ -237,7 +237,7 @@ has_permission = {
 # --------------------------------
 
 # auth_hooks = [
-# 	"report_builder.auth.validate"
+# 	"report_builder_finstein.auth.validate"
 # ]
 
 # Automatically update python controller files with type annotations for this app.

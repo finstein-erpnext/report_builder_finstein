@@ -4,7 +4,7 @@ from typing import Optional
 
 import frappe
 
-from report_builder.engine.schema import MAX_JOIN_DEPTH, Config
+from report_builder_finstein.engine.schema import MAX_JOIN_DEPTH, Config
 
 LAYOUT_FIELDTYPES = {
 	"Section Break",
@@ -128,7 +128,7 @@ def resolve_path(base_doctype: str, path: str, source: str = "") -> FieldRef:
 				# Fall back to a real DB column (e.g. creation, modified, owner,
 				# docstatus, _user_tags, custom DB-level columns). Only the
 				# terminal segment is allowed — non-Link columns can't be drilled.
-				from report_builder.api.metadata import get_db_columns
+				from report_builder_finstein.api.metadata import get_db_columns
 
 				db_cols = get_db_columns(current_dt)
 				if segment in db_cols:
@@ -235,7 +235,7 @@ def resolve_join_match_path(base_doctype: str, path: str, source: str = "") -> J
 			}
 		)
 	if not child_df:
-		from report_builder.api.metadata import get_db_columns
+		from report_builder_finstein.api.metadata import get_db_columns
 
 		db_cols = get_db_columns(child_dt)
 		if segments[1] in db_cols:

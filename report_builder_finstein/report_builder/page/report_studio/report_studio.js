@@ -8,32 +8,32 @@ frappe.provide("frappe.report_studio");
 const RB_API = {
 	getAllowedDoctypes: (search = "") =>
 		frappe.call({
-			method: "report_builder.api.metadata.get_allowed_doctypes",
+			method: "report_builder_finstein.api.metadata.get_allowed_doctypes",
 			args: { search, limit: 100 },
 		}).then((r) => r.message || []),
 
 	getFields: (doctype) =>
 		frappe.call({
-			method: "report_builder.api.metadata.get_fields",
+			method: "report_builder_finstein.api.metadata.get_fields",
 			args: { doctype, depth: 1 },
 		}).then((r) => r.message || []),
 
 	getChildTables: (doctype) =>
 		frappe.call({
-			method: "report_builder.api.metadata.get_child_tables",
+			method: "report_builder_finstein.api.metadata.get_child_tables",
 			args: { doctype },
 		}).then((r) => r.message || []),
 
 	preview: (config, page = 1, page_size = 20) =>
 		frappe.call({
-			method: "report_builder.api.builder.preview",
+			method: "report_builder_finstein.api.builder.preview",
 			args: { config: JSON.stringify(config), page, page_size },
 		}).then((r) => r.message),
 
 	saveReport: (payload) => {
 		console.log("[ReportStudio] frappe.call → save_report", payload);
 		return frappe.call({
-			method: "report_builder.api.builder.save_report",
+			method: "report_builder_finstein.api.builder.save_report",
 			args: payload,
 		}).then((r) => {
 			console.log("[ReportStudio] save_report response", r);
@@ -48,31 +48,31 @@ const RB_API = {
 
 	loadReport: (name) =>
 		frappe.call({
-			method: "report_builder.api.builder.load_report",
+			method: "report_builder_finstein.api.builder.load_report",
 			args: { name },
 		}).then((r) => r.message),
 
 	listReports: (search = "", mine_only = 0) =>
 		frappe.call({
-			method: "report_builder.api.builder.list_reports",
+			method: "report_builder_finstein.api.builder.list_reports",
 			args: { search, mine_only, limit: 100 },
 		}).then((r) => r.message || []),
 
 	deleteReport: (name) =>
 		frappe.call({
-			method: "report_builder.api.builder.delete_report",
+			method: "report_builder_finstein.api.builder.delete_report",
 			args: { name },
 		}),
 
 	publishStandardReport: (name) =>
 		frappe.call({
-			method: "report_builder.api.builder.publish_to_standard_report",
+			method: "report_builder_finstein.api.builder.publish_to_standard_report",
 			args: { name },
 		}).then((r) => r.message),
 
 	unpublishStandardReport: (name) =>
 		frappe.call({
-			method: "report_builder.api.builder.unpublish_standard_report",
+			method: "report_builder_finstein.api.builder.unpublish_standard_report",
 			args: { name },
 		}),
 };
@@ -172,7 +172,7 @@ class ReportStudio {
 		this.wrapper = wrapper;
 		this.page = frappe.ui.make_app_page({
 			parent: wrapper,
-			title: __("Report Studio"),
+			title: __("Report Builder Finstein"),
 			single_column: true,
 		});
 
@@ -422,7 +422,7 @@ class ReportStudio {
 			label: __("Select DocType"),
 			placeholder: __("Type to search a DocType"),
 			get_query: () => ({
-				query: "report_builder.api.metadata.search_doctypes",
+				query: "report_builder_finstein.api.metadata.search_doctypes",
 			}),
 			change: () => this._onBaseDoctypeChanged(),
 		};
@@ -1559,7 +1559,7 @@ class ReportStudio {
 					label: __("Join DocType"),
 					options: "DocType",
 					reqd: 1,
-					get_query: () => ({ query: "report_builder.api.metadata.search_doctypes" }),
+					get_query: () => ({ query: "report_builder_finstein.api.metadata.search_doctypes" }),
 				},
 				{
 					fieldname: "join_type",
@@ -3434,7 +3434,7 @@ class ReportStudio {
 	_downloadExport(fmt) {
 		const cfg = this._buildConfig();
 		const params = new URLSearchParams();
-		params.set("cmd", "report_builder.api.export.export_report");
+		params.set("cmd", "report_builder_finstein.api.export.export_report");
 		params.set("fmt", fmt);
 		if (this.state.docName) {
 			params.set("name", this.state.docName);
@@ -3442,7 +3442,7 @@ class ReportStudio {
 			params.set("config", JSON.stringify(cfg));
 			params.set("title", this.state.title || "report");
 		}
-		const url = `/api/method/report_builder.api.export.export_report?${params.toString()}`;
+		const url = `/api/method/report_builder_finstein.api.export.export_report?${params.toString()}`;
 		const a = document.createElement("a");
 		a.href = url;
 		a.target = "_blank";

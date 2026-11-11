@@ -1,4 +1,4 @@
-### Report Creator
+### Report Builder Finstein
 
 A Frappe app that lets users design, run, and share reports **entirely through a UI** — selecting
 columns, applying filters, grouping, sorting, joining related/child-table sources, and adding
@@ -45,7 +45,7 @@ DocTypes they already have `read` access to, and row-level permission query cond
 underlying DocTypes are still respected.
 
 After enabling the app, open Report Studio at `/app/report-studio` on your site. It also
-appears as a **Report Studio** tile on the Apps screen.
+appears as a **Report Builder Finstein** tile on the Apps screen.
 
 ---
 
@@ -115,14 +115,14 @@ to the Report Studio engine, including runtime filters. Publishing can be revers
 Report Studio page (JS UI)
         │  builds a JSON "config"
         ▼
-report_builder.api.*   ──  whitelisted endpoints
+report_builder_finstein.api.*   ──  whitelisted endpoints
   builder.py   → preview / save / load / list / delete / publish
   export.py    → export_report (xlsx/csv/pdf)
   metadata.py  → DocType & field discovery for the UI
   permission.py→ role checks + row-level query conditions
         │
         ▼
-report_builder.engine  ──  the query engine
+report_builder_finstein.engine  ──  the query engine
   schema.py        → validates & normalises the config
   meta_validator.py→ verifies DocTypes/fields exist & are readable
   join_resolver.py → resolves related/child-table joins
@@ -147,7 +147,7 @@ Key points:
   `Report Studio Related Source`, `Report Studio Column`, `Report Studio Calculation`,
   `Report Studio Filter`, `Report Studio Group By`, `Report Studio Sort`, and
   `Report Studio Share`.
-- **Published reports** use an inline runner (`report_builder.runtime.inline_runner`) so the
+- **Published reports** use an inline runner (`report_builder_finstein.runtime.inline_runner`) so the
   generated standard report stays in sync with the Report Studio definition.
 
 ---
